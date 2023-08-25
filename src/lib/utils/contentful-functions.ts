@@ -1,6 +1,10 @@
 import * as Contentful from 'contentful';
-import { TypePage__name, TypePage__nameFields, TypePage__nameSkeleton } from './contentfultype3';
-import { client } from './contentfulClient';
+import {
+  TypePage__name,
+  TypePage__nameFields,
+  TypePage__nameSkeleton,
+} from '../types/contentful-types';
+import { client } from '../contentfulClient';
 
 export async function getPageData(entryId: string) {
   const data =
@@ -13,4 +17,3 @@ export async function getPageData(entryId: string) {
   }
   return data;
 }
-

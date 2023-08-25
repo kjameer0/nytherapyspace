@@ -4,13 +4,11 @@ import {
   isTypeHeader,
   isTypeParagraph,
   isTypeListText,
-} from '../contentfultype3';
+} from '../types/contentful-types';
 //type of page data that is return from client.getEntry
 type DataType = Entry<TypePage__nameSkeleton, 'WITHOUT_UNRESOLVABLE_LINKS', string>;
 //returns an object that contains the images and sections and pagetitle for a page
-function destructurePageData(data: DataType) {
-  const dataObj = {};
-}
+
 export type sectionHeaderType = {
   mainHeading: string;
   subHeading: string | undefined;
@@ -21,7 +19,13 @@ export type sectionParagraphType = {
 export type sectionListType = {
   listContent: string[];
 };
-export type sectionObjType = sectionHeaderType | sectionParagraphType | sectionListType;
+
+export type sectionObjType = {
+  lists: Record<string, sectionListType>;
+  headers: Record<string, sectionHeaderType>;
+  paragraphs: Record<string, sectionParagraphType>;
+};
+
 export function generateImageObject(data: DataType) {
   try {
     //make sure images is not undefined
@@ -57,7 +61,7 @@ export function generateSectionsObject(data: DataType) {
     }
     const sections = data.fields.sections;
     //sections are stored with their title as the key and content objects as values
-    const sectionObj: Record<string, sectionHeaderType | sectionListType | sectionParagraphType> = {};
+    const sectionObj: sectionObjType = { lists: {}, headers: {}, paragraphs: {} };
     sections.forEach((section) => {
       //make sure section title exists
       if (section === undefined || section.fields === undefined) {
@@ -75,21 +79,25 @@ export function generateSectionsObject(data: DataType) {
         if (typeof mainHeading === 'object' || typeof subHeading === 'object') {
           throw new ReferenceError('no content');
         }
-        sectionObj[title] = {
+        const content: sectionHeaderType = { mainHeading, subHeading };
+        sectionObj.headers[title] = {
           mainHeading,
           subHeading,
         };
       } else if (isTypeParagraph(section)) {
-        const content = section.fields.content;
-        if (typeof content === 'object' || content === undefined)
+        const text = section.fields.content;
+        if (typeof text === 'object' || text === undefined) {
           throw new ReferenceError('no paragraph content');
-        sectionObj[title] = { content };
+        }
+        const content = { content: text } as sectionParagraphType;
+        sectionObj.paragraphs[title] = content;
       } else if (isTypeListText(section)) {
         const content = section.fields.listContent;
         if (!Array.isArray(content) || content === undefined) {
           throw new ReferenceError('no list content');
         }
-        sectionObj[title] = { listContent: content };
+        const listContent = { listContent: content } as sectionListType;
+        sectionObj.lists[title] = listContent;
       }
     });
     return sectionObj;
@@ -99,6 +107,19 @@ export function generateSectionsObject(data: DataType) {
   }
 }
 
+export function destructurePageData(data: DataType) {
+  try {
+    if (data === undefined) {
+      throw new ReferenceError('no data to destructure');
+    }
+    return [generateImageObject(data), generateSectionsObject(data)];
+  } catch (error) {
+    if (error instanceof ReferenceError) console.error(error.message);
+    else console.error('image object error');
+  }
+}
+
+//type checking functions
 export function isSectionHeaderType(obj: any): obj is sectionHeaderType {
   return obj && typeof obj === 'object' && 'mainHeading' in obj;
 }
