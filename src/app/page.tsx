@@ -4,7 +4,7 @@ import { sectionObjType, destructurePageData } from '@/lib/utils/page-type-gener
 import { getPageData } from '@/lib/utils/contentful-functions';
 
 export default async function Home() {
-  const data = await getPageData('ji');
+  const data = await getPageData('3ADmil1Bk8Y0hsIEHh8P9X');
   //get images and sections from data
   const [imgObj, sectionsObj] = destructurePageData(data) as [
     Record<string, string>,

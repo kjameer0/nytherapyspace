@@ -7,10 +7,7 @@ import {
 import { client } from '../contentfulClient';
 
 export async function getPageData(entryId: string) {
-  const data =
-    await client.withoutUnresolvableLinks.getEntry<TypePage__nameSkeleton>(
-      '3ADmil1Bk8Y0hsIEHh8P9X'
-    );
+  const data = await client.withoutUnresolvableLinks.getEntry<TypePage__nameSkeleton>(entryId);
   if (!data) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');
