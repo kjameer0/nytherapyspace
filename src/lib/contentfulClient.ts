@@ -1,5 +1,5 @@
 import * as Contentful from 'contentful';
 export const client = Contentful.createClient({
-  space: 'wl06h2bz5cmo',
-  accessToken: 'iD4uqm7P2mAxJKCGRB5e_ihL-le6h50G_awI7vtI6ro',
+  space: process.env.NEXT_PUBLIC_SPACE_KEY as string,
+  accessToken: process.env.NEXT_PUBLIC_API_KEY as string,
 });
