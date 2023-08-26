@@ -25,6 +25,9 @@ export type sectionObjType = {
   headers: Record<string, sectionHeaderType>;
   paragraphs: Record<string, sectionParagraphType>;
 };
+export type descriptionTextType = {
+  
+}
 
 export function generateImageObject(data: DataType) {
   try {
@@ -85,6 +88,7 @@ export function generateSectionsObject(data: DataType) {
           subHeading,
         };
       } else if (isTypeParagraph(section)) {
+        //paragraphs only have one field: content
         const text = section.fields.content;
         if (typeof text === 'object' || text === undefined) {
           throw new ReferenceError('no paragraph content');
@@ -107,12 +111,19 @@ export function generateSectionsObject(data: DataType) {
   }
 }
 
+//get images and section data out of the entire data object
+//from API
 export function destructurePageData(data: DataType) {
   try {
     if (data === undefined) {
       throw new ReferenceError('no data to destructure');
     }
-    return [generateImageObject(data), generateSectionsObject(data)];
+    const images = generateImageObject(data);
+    const sections = generateSectionsObject(data);
+    if (!images || !sections) {
+      throw new ReferenceError('no data to destructure');
+    }
+    return [images, sections];
   } catch (error) {
     if (error instanceof ReferenceError) console.error(error.message);
     else console.error('image object error');

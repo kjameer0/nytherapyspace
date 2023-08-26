@@ -58,3 +58,24 @@ export type TypeParagraph = Entry<TypeParagraphSkeleton>;
 export function isTypeParagraph(entry: Entry<EntrySkeletonType>): entry is TypeParagraph {
   return entry.sys.contentType.sys.id === 'paragraph';
 }
+
+export interface TypeDescriptionTextFields {
+  adjectiveList?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+  therapyText?: EntryFieldTypes.Symbol;
+}
+
+export type TypeDescriptionTextSkeleton = EntrySkeletonType<
+  TypeDescriptionTextFields,
+  'descriptionText'
+>;
+export type TypeDescriptionText = Entry<TypeDescriptionTextSkeleton>;
+
+
+export interface TypeButtonTextFields {
+    consultation?: EntryFieldTypes.Symbol;
+    bookNow?: EntryFieldTypes.Symbol;
+}
+
+export type TypeButtonTextSkeleton = EntrySkeletonType<TypeButtonTextFields, "buttonText">;
+export type TypeButtonText = Entry<TypeButtonTextSkeleton>;
+
