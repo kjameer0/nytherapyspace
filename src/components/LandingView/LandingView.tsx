@@ -2,6 +2,7 @@ import styles from './landingview.module.css';
 //components
 import Image from 'next/image';
 import BookButton from '../BookButton/BookButton';
+import MobileNavBar from '../MobileNavBar/MobileNavBar';
 //fonts
 import {
   CormorantBold,
@@ -32,22 +33,29 @@ export default async function LandingView({
   //break apart name and certificaiton from props to apply different font
   const [name, certification] = subHeading.split(',');
   return (
-    <div className="headerBlock">
+    <div className={styles.headerBlock}>
+      <div className={styles.headerWrapper}>
       <header className={styles.pageHeader}>
-        <h1 className={`${CormorantBold.className} ${styles.headerBlock__pageHeading}`}>
+        <div className={styles.logo}></div>
+        <h1 className={`${styles.headerBlock__pageHeading} ${CormorantBold.className}`}>
           {heading}
         </h1>
-        <p className={`${CormorantBoldItalic.className} ${styles.headerBlock__pageSubHeading}`}>
+        <p className={`${styles.headerBlock__pageSubHeading} ${CormorantBoldItalic.className}`}>
           {`${name}, `}
           <span className={CormorantItalic.className}>{certification}</span>
         </p>
         <BookButton text="consultation" />
-        <p className={`${CormorantMedium.className}`}>{adjectiveList.join(' ')}</p>
-        <p className={`${semplicitaLight.className}`}>{therapyText}</p>
+        <p className={`${CormorantMedium.className} ${styles.headerBlock__adjList}`}>{adjectiveList.map((word, index) => {
+          return <span className={`${CormorantMedium.className}`} key={crypto.randomUUID()}>{word}</span>
+        })}</p>
+        <p className={`${styles.headerBlock__therapyText} ${semplicitaLight.className}`}>{therapyText}</p>
       </header>
-      <div className={styles.headerBlock__image}>
-        <Image src={imgSrc} priority width={150} height={150} alt="Mirror mounted on wall" />
       </div>
+      <div className={styles.headerBlock__image}>
+        <Image src={imgSrc} priority width={3173} height={4302} alt="Mirror mounted on wall" />
+      </div>
+      <div className={styles.headerMobileRule}></div>
+      <MobileNavBar  />
     </div>
   );
 }

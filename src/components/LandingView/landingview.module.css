@@ -1,10 +1,119 @@
 .pageHeader {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pageHeader button {
+  border: 1px solid;
+  padding: 5px 17px;
+  margin-bottom: 25px;
 }
 .headerBlock__image {
   display: none;
 }
-@media screen and (min-width: 744px) {
+.headerBlock__pageSubHeading {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+.headerBlock__pageHeading {
+  flex-basis: 100%;
+  text-align: center;
+}
+.headerBlock__adjList {
+  margin-bottom: 10px;
+  flex-basis: 100%;
+  text-align: center;
+}
+.headerBlock__adjList span{
+  margin: 0px 4px;
+}
+.headerMobileRule {
+  position: relative;
+  left: 10%;
+  background-color: #DFE1D7;
+  height: 6px;
+  width: 80%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.logo {
+  display: none;
+}
+@media screen and (min-width: 640px) {
+  .headerBlock {
+    min-height: 480px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: clamp(480px, 80vw, 1500px);
+    overflow: hidden;
+  }
+  .headerWrapper {
+    flex-basis: 50%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    display: block;
+    flex-basis: 40%;
+    height: 60px;
+    width: 60px;
+    background-color: blue;
+  }
   .pageHeader {
+    background-color: white;
+  }
+  .headerMobileRule {
+    display: none;
+  }
+  .headerBlock__image {
+    display: block;
+    background-color: transparent;
+    min-width: 382px;
+    min-height: 475px;
+    width: 70vw;
+    height: 60vw;
+    position: absolute;
+    overflow-y: hidden;
+    top: -30px;
+    left: 55vw;
+    flex-basis: 40%;
+    transform: rotate(-4.44deg);
+    z-index: -1;
+  }
+  .headerBlock__image img{
+    min-width: calc(382px);
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+    z-index: 0;
+    object-fit: cover;
   }
 }
+@media screen and (min-width: 1024px) {
+  .pageHeader {
+    position: relative;
+    left: 50px;
+  }
+  .headerBlock {
+  }
+  .headerBlock__pageHeading {
+    font-size: 4rem;
+  }
+  .headerBlock__pageSubHeading, .headerBlock__adjList, .headerBlock__therapyText {
+    font-size: 1.5rem;
+  }
+  .headerBlock__adjList {
 
+  }
+  .headerBlock__image {
+    top: -40px;
+    width: 70vw;
+    left: 60vw;
+  }
+  .headerBlock__image img{
+  }
+}

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 //types
-import { TypeDescriptionTextFields } from '@/lib/types/contentful-types';
 import { sectionObjType, destructurePageData } from '@/lib/utils/page-type-generator';
 import { getPageData } from '@/lib/utils/contentful-functions';
 //components
@@ -14,15 +13,14 @@ export default async function Home() {
     Record<string, string>,
     sectionObjType,
   ];
-  console.log(sectionsObj)
   //headers
   const { lists, paragraphs, headers } = sectionsObj;
   //paragraphs
   return (
     <main className={styles.main}>
-      <LandingView imgSrc={imgObj.coffeehero} heading={headers.nytherapyspace.mainHeading} subHeading={headers.nytherapyspace.subHeading}/>
+      <LandingView imgSrc={imgObj.mirrorheaderimage} heading={headers.nytherapyspace.mainHeading} subHeading={headers.nytherapyspace.subHeading}/>
       OY
-      <Image src={imgObj.headshot} priority width={150} height={150} alt="coffee" />
+      <Image src={imgObj.headshot} priority width={150} height={150} alt="Jennie's headshot" />
       <p>{data.fields.pageTitle}</p>
       <p>{headers.hello.mainHeading}</p>
     </main>
