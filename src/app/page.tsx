@@ -18,8 +18,53 @@ export default async function Home() {
   ];
   //headers
   const { lists, paragraphs, headers } = sectionsObj;
+  console.log(paragraphs);
+  const servicesArr: { name: string; content: string; imgSrc: string; alt: string }[] = [
+    {
+      name: headers.individualTherapy.mainHeading,
+      content: paragraphs.individualTherapyParagraph.content,
+      imgSrc: imgObj.individualchair,
+      alt: 'Single light brown chair with wooden arm rests',
+    },
+    {
+      name: headers.couplesRelationship.mainHeading,
+      content: paragraphs.couplesCounselingPara.content,
+      imgSrc: imgObj.couplescouch,
+      alt: 'Leather couch.',
+    },
+    {
+      name: headers.teenAdolescentHeading.mainHeading,
+      content: paragraphs.teenAdolescentPara.content,
+      imgSrc: imgObj.teenchair,
+      alt: 'single brown chair',
+    },
+    {
+      name: headers.groupTherapy.mainHeading,
+      content: paragraphs.groupTherapyPara.content,
+      imgSrc: imgObj.groupsofa,
+      alt: 'Wire chair',
+    },
+    {
+      name: headers.familyTherapy.mainHeading,
+      content: paragraphs.familyTherapyPara.content,
+      imgSrc: imgObj.familyanimal,
+      alt: 'Light color couch with colorful pillows',
+    },
+    {
+      name: headers.clinicalSupervision.mainHeading,
+      content: paragraphs.clinicalSupervisionPara.content,
+      imgSrc: imgObj.supervisionchair,
+      alt: 'Green stuffed animal',
+    },
+  ];
+  const expectationsArr: string[] = [
+    paragraphs.expectPara1.content,
+    paragraphs.expectPara2.content,
+    paragraphs.expectPara3.content,
+    paragraphs.expectPara4.content,
+    paragraphs.expectPara5.content,
+  ];
   //paragraphs
-  console.log(imgObj);
   return (
     <main className={`${semplicitaLight.className} ${styles.main}`}>
       <LandingView
@@ -49,9 +94,24 @@ export default async function Home() {
       </div>
       <section className={styles.servicesSection}>
         <div className={styles.servicesSection__heroWrapper}>
-          <Image src={imgObj.typinghero} width={371} height={45} alt="Person typing"></Image>
+          <Image src={imgObj.typinghero} width={375} height={45} alt="Person typing"></Image>
         </div>
-        <h2 className="">{headers.servicesHeading.mainHeading}</h2>
+        <h2 className={`${CormorantBold.className}`}>{headers.servicesHeading.mainHeading}</h2>
+        <ul className={styles.servicesSection__paraList}>
+          {servicesArr.map((service, idx) => {
+            return (
+              <li className={styles['servicesSection__listItem']} key={crypto.randomUUID()}>
+                <div className={styles.servicesSection__imgWrapper}>
+                  <Image src={service.imgSrc} width={150} height={150} alt={service.alt} />
+                </div>
+                <div className={styles['servicesSection__textWrapper']}>
+                  <h3 className={`${poppinsSemiBold.className}`}>{service.name}</h3>
+                  <p>{service.content}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </main>
   );

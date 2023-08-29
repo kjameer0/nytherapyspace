@@ -36,6 +36,49 @@
   width: 100%;
   height: inherit;
 }
+.servicesSection h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+/* ul that contains all service blocks */
+.servicesSection__paraList {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* each individual service item */
+.servicesSection__listItem {
+  padding: 15px;
+  width: 90%;
+  flex-basis: 100%;
+  display: flex;
+}
+/* enforces size of images */
+.servicesSection__imgWrapper {
+  min-width: 75px;
+  height: 75px;
+  width: 75px;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+.servicesSection__imgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.servicesSection h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+.servicesSection p {
+  line-height: 1.3;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+/* separates the text from the image for flex */
+.servicesSection__textWrapper {
+  flex-basis: 80%;
+}
 
 /* Tablet */
 @media (min-width: 640px) {
@@ -70,6 +113,14 @@
   .helloSection > p {
     margin-left: 19px;
   }
+  .servicesSection__listItem {
+    flex-basis: 50%;
+    padding: 5px;
+    margin-bottom: 15px;
+  }
+  .servicesSection__textWrapper {
+    flex-basis: 70%;
+  }
 }
 
 /* Tablet and Smaller Desktop */
@@ -95,5 +146,11 @@
   }
   .helloSection > p {
     font-size: clamp(1rem, 3.5vw, 1.25rem);
+  }
+  .servicesSection__imgWrapper {
+    min-width: 150px;
+    margin-right: 30px;
+    height: 150px;
+    width: 150px;
   }
 }
