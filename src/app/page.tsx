@@ -19,6 +19,7 @@ export default async function Home() {
   //headers
   const { lists, paragraphs, headers } = sectionsObj;
   //paragraphs
+  console.log(imgObj);
   return (
     <main className={`${semplicitaLight.className} ${styles.main}`}>
       <LandingView
@@ -46,6 +47,12 @@ export default async function Home() {
           <p>{paragraphs.ready.content}</p>
         </section>
       </div>
+      <section className={styles.servicesSection}>
+        <div className={styles.servicesSection__heroWrapper}>
+          <Image src={imgObj.typinghero} width={371} height={45} alt="Person typing"></Image>
+        </div>
+        <h2 className="">{headers.servicesHeading.mainHeading}</h2>
+      </section>
     </main>
   );
 }
