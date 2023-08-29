@@ -79,3 +79,13 @@ export interface TypeButtonTextFields {
 export type TypeButtonTextSkeleton = EntrySkeletonType<TypeButtonTextFields, "buttonText">;
 export type TypeButtonText = Entry<TypeButtonTextSkeleton>;
 
+//logo
+export interface TypeLogoFields {
+    logoImg: EntryFieldTypes.AssetLink;
+    title: EntryFieldTypes.Symbol;
+}
+
+export type TypeLogoSkeleton = EntrySkeletonType<TypeLogoFields, "logo">;
+export type TypeLogo = Entry<TypeLogoSkeleton>;
+
+

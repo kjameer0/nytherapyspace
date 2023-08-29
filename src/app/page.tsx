@@ -18,7 +18,6 @@ export default async function Home() {
   ];
   //headers
   const { lists, paragraphs, headers } = sectionsObj;
-  console.log(paragraphs);
   const servicesArr: { name: string; content: string; imgSrc: string; alt: string }[] = [
     {
       name: headers.individualTherapy.mainHeading,
@@ -65,6 +64,7 @@ export default async function Home() {
         imgSrc={imgObj.mirrorheaderimage}
         heading={headers.nytherapyspace.mainHeading}
         subHeading={headers.nytherapyspace.subHeading}
+        isHome={true}
       />
       <div className={styles.helloSectionBlock}>
         <section className={`${styles.helloSection}`}>

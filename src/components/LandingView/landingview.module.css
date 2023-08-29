@@ -60,10 +60,10 @@
   }
   .logo {
     display: block;
-    flex-basis: 40%;
-    height: 60px;
+  }
+  .logo img {
     width: 60px;
-    background-color: blue;
+    height: 60px;
   }
   .pageHeader {
     background-color: white;
@@ -100,6 +100,10 @@
   .pageHeader {
     position: relative;
     left: 50px;
+  }
+  .logo img {
+    width: 98px;
+    height: 98px;
   }
   .headerBlock {
   }
