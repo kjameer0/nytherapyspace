@@ -1,12 +1,11 @@
-//styles
-import styles from './mobile-nav.module.css';
 //fonts
-import { semplicitaMedium } from '@/app/fonts/fonts';
-
-export default function MobileNavBar() {
+import { semplicitaMedium, semplicitaRegular } from '@/app/fonts/fonts';
+//styles
+import styles from './nav.module.css';
+export default function NavBar() {
   return (
-    <nav className={`${styles.mobileNavBlock}`}>
-      <ul className={`${semplicitaMedium.className} ${styles.mobileNavBlock__NavList}`}>
+    <nav className={`${styles.NavBlock}`}>
+      <ul className={`${semplicitaRegular.className} ${styles.NavBlock__NavList}`}>
         <li>
           <a href="">home</a>
         </li>

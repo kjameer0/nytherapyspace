@@ -2,7 +2,7 @@ import styles from './landingview.module.css';
 //components
 import Image from 'next/image';
 import BookButton from '../BookButton/BookButton';
-import MobileNavBar from '../MobileNavBar/MobileNavBar';
+import MobileNavBar from '../NavBar/NavBar';
 //fonts
 import {
   CormorantBold,

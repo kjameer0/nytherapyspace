@@ -9,7 +9,6 @@ import {
   isSectionListType,
 } from '../src/lib/utils/page-type-generator';
 import { getPageData } from '../src/lib/utils/contentful-functions';
-import exp from 'constants';
 describe('Page data ', () => {
   test('image object generator', async () => {
     const data = await getPageData('hi');

@@ -1,17 +1,90 @@
-
-/* Enable hover only on non-touch devices */
-
-
-
+.helloSectionBlock {
+  padding-top: 40px;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.helloSection {
+  background-color: #efefed;
+  flex-basis: 80%;
+  box-shadow: 2px 2px 4px rgb(140, 133, 133);
+  margin-bottom: 40px;
+}
+.helloSection header {
+  text-align: center;
+}
+.helloSection p {
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+/* set it to left of text and make space at the bottom */
+.helloSection__headshotImg {
+  position: relative;
+  left: -10px;
+  margin-bottom: 10px;
+  float: left;
+  border: 1px solid rgb(156, 147, 147);
+  box-shadow: 0px 2px 4px rgb(140, 133, 133);
+}
 
 /* Tablet */
-@media (min-width: 700px) {
-
+@media (min-width: 640px) {
+  .helloSectionBlock {
+    padding: 40px 20px 0 20px;
+    justify-content: flex-end;
+  }
+  .helloSection {
+    position: relative;
+    background-color: #efefed;
+    padding: 10px;
+    margin-right: 40px;
+    flex-basis: 70%;
+    box-shadow: 2px 2px 4px rgb(140, 133, 133);
+  }
+  .helloSection header {
+    text-align: left;
+    margin-left: 20px;
+  }
+  .helloSection header p {
+    padding: 0;
+  }
+  .helloSection__headshotImg {
+    position: absolute;
+    left: -120px;
+    margin-bottom: 10px;
+    transform: scale(1.2);
+    float: none;
+    border: 1px solid rgb(156, 147, 147);
+    box-shadow: 0px 2px 4px rgb(140, 133, 133);
+  }
+  .helloSection > p {
+    margin-left: 19px;
+  }
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-
+@media (min-width: 1024px) {
+  .helloSection__headshotImg {
+    position: absolute;
+    left: -19vw;
+    margin-bottom: 10px;
+    width: clamp(200px, 18vw, 400px);
+    height: auto;
+    float: none;
+    border: 1px solid rgb(156, 147, 147);
+    box-shadow: 0px 2px 4px rgb(140, 133, 133);
+  }
+  .helloSection {
+    padding-bottom: 40px;
+  }
+  .helloSection header h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+  .helloSection header p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  .helloSection > p {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+  }
 }
-
-

@@ -31,10 +31,10 @@
 }
 .headerMobileRule {
   position: relative;
-  left: 10%;
+  left: 7.5%;
   background-color: #DFE1D7;
   height: 6px;
-  width: 80%;
+  width: 85%;
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -47,14 +47,16 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    height: clamp(480px, 80vw, 1500px);
+    height: clamp(480px, 60vw, 700px);
     overflow: hidden;
+    margin-bottom: -30px;
   }
   .headerWrapper {
     flex-basis: 50%;
     margin-top: 40px;
     display: flex;
     align-items: center;
+    height: 75%;
   }
   .logo {
     display: block;
@@ -74,23 +76,24 @@
     background-color: transparent;
     min-width: 382px;
     min-height: 475px;
-    width: 70vw;
-    height: 60vw;
+    height: 40vw;
+    max-height: 480px;
+    width: 85vw;
     position: absolute;
-    overflow-y: hidden;
-    top: -30px;
-    left: 55vw;
+    top: -50px;
+    left: 60vw;
     flex-basis: 40%;
     transform: rotate(-4.44deg);
     z-index: -1;
   }
   .headerBlock__image img{
     min-width: calc(382px);
-    width: 70%;
+    width: 50%;
+    transform: scale(1);
     height: auto;
     overflow: hidden;
     z-index: 0;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
 }
 @media screen and (min-width: 1024px) {
@@ -110,10 +113,16 @@
 
   }
   .headerBlock__image {
-    top: -40px;
-    width: 70vw;
-    left: 60vw;
+    top: 75px;
+    width: 30vw;
+    left: 69vw;
+    transform: rotate(-4.44deg);
   }
   .headerBlock__image img{
+    transform: scale(1.5);
+
+  }
+  .pageHeader button {
+   font-size: 1.25rem;
   }
 }
