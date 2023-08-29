@@ -57,13 +57,7 @@ export default async function Home() {
       alt: 'Green stuffed animal',
     },
   ];
-  const expectationsArr: string[] = [
-    paragraphs.expectPara1.content,
-    paragraphs.expectPara2.content,
-    paragraphs.expectPara3.content,
-    paragraphs.expectPara4.content,
-    paragraphs.expectPara5.content,
-  ];
+
   //paragraphs
   return (
     <main className={`${semplicitaLight.className} ${styles.main}`}>
@@ -93,7 +87,7 @@ export default async function Home() {
         </section>
       </div>
       <section className={styles.servicesSection}>
-        <div className={styles.servicesSection__heroWrapper}>
+        <div className={styles.heroWrapper}>
           <Image src={imgObj.typinghero} width={375} height={45} alt="Person typing"></Image>
         </div>
         <h2 className={`${CormorantBold.className}`}>{headers.servicesHeading.mainHeading}</h2>
@@ -112,6 +106,23 @@ export default async function Home() {
             );
           })}
         </ul>
+      </section>
+      <section className={styles.expectationSection}>
+        <div className={styles.heroWrapper}>
+          <Image src={imgObj.expectationhero} width={375} height={45} alt="Person typing"></Image>
+        </div>
+        <div className={styles.expectationSection__textWrapper}>
+          <div className={styles.expectationSection__textWrapper__firstParaWrapper}>
+            <h3 className={`${poppinsSemiBold.className}`}>{headers.whatToExpect.mainHeading}</h3>
+            <p>{paragraphs.expectPara1.content}</p>
+            <p>{paragraphs.expectPara2.content}</p>
+            <p>{paragraphs.expectPara3.content}</p>
+          </div>
+          <div className={styles.expectationSection__textWrapper__secondParaWrapper}>
+            <p>{paragraphs.expectPara4.content}</p>
+            <p>{paragraphs.expectPara5.content}</p>
+          </div>
+        </div>
       </section>
     </main>
   );

@@ -1,3 +1,5 @@
+.main {
+}
 .helloSectionBlock {
   padding-top: 40px;
   background-color: white;
@@ -17,6 +19,7 @@
 .helloSection p {
   margin-bottom: 15px;
   padding: 0 10px;
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
 /* set it to left of text and make space at the bottom */
 .helloSection__headshotImg {
@@ -27,14 +30,18 @@
   border: 1px solid rgb(156, 147, 147);
   box-shadow: 0px 2px 4px rgb(140, 133, 133);
 }
-.servicesSection__heroWrapper {
+.heroWrapper {
   width: 100%;
   height: clamp(45px, 14vw, 151px);
+  margin-bottom: 40px;
 }
-.servicesSection__heroWrapper img {
+.heroWrapper img {
   object-fit: cover;
   width: 100%;
   height: inherit;
+}
+.servicesSection {
+  margin-bottom: clamp(30px, 3vw, 70px);
 }
 .servicesSection h2 {
   text-align: center;
@@ -68,7 +75,8 @@
   height: 100%;
   object-fit: cover;
 }
-.servicesSection h3 {
+.servicesSection h3,
+.expectationSection__textWrapper__firstParaWrapper h3 {
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
 .servicesSection p {
@@ -78,6 +86,25 @@
 /* separates the text from the image for flex */
 .servicesSection__textWrapper {
   flex-basis: 80%;
+}
+
+.expectationSection__textWrapper {
+  margin: 15px;
+}
+.expectationSection__textWrapper__firstParaWrapper,
+.expectationSection__textWrapper__secondParaWrapper {
+  padding: 25px 20px;
+  box-shadow: 2px 2px 4px rgb(140, 133, 133);
+}
+.expectationSection__textWrapper p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+.expectationSection__textWrapper__firstParaWrapper {
+  background-color: #dfe1d7;
+  margin-bottom: 20px;
+}
+.expectationSection__textWrapper__secondParaWrapper {
+  background-color: #efefed;
 }
 
 /* Tablet */
@@ -120,6 +147,30 @@
   }
   .servicesSection__textWrapper {
     flex-basis: 70%;
+  }
+  .expectationSection__textWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 30px;
+  }
+  .expectationSection__textWrapper p {
+    text-align: justify;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1.7;
+  }
+  .expectationSection__textWrapper__firstParaWrapper {
+    flex-basis: 50%;
+    padding-right: 40px;
+  }
+  .expectationSection__textWrapper__secondParaWrapper {
+    position: relative;
+    flex-basis: 45%;
+    right: 30px;
+    height: 50%;
+    align-self: center;
+    padding: 25px;
   }
 }
 
