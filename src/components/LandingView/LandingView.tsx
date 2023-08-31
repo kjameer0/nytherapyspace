@@ -2,7 +2,7 @@ import styles from './landingview.module.css';
 //components
 import Image from 'next/image';
 import BookButton from '../BookButton/BookButton';
-import MobileNavBar from '../NavBar/NavBar';
+import NavBar from '../NavBar/NavBar';
 //fonts
 import {
   CormorantBold,
@@ -12,7 +12,6 @@ import {
   semplicitaLight,
   semplicitaMedium,
 } from '@/app/fonts/fonts';
-import { generateImageObject } from '@/lib/utils/page-type-generator';
 //data
 import { getDescriptionText, getLogo } from '@/lib/utils/contentful-functions';
 export default async function LandingView({
@@ -71,7 +70,7 @@ export default async function LandingView({
         <Image src={imgSrc} priority width={3173} height={4302} alt="Mirror mounted on wall" />
       </div>
       <div className={styles.headerMobileRule}></div>
-      <MobileNavBar />
+      <NavBar />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export type sectionObjType = {
   paragraphs: Record<string, sectionParagraphType>;
 };
 export type descriptionTextType = {
-  
+
 }
 
 export function generateImageObject(data: DataType) {

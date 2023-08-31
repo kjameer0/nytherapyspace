@@ -93,7 +93,6 @@
     height: auto;
     overflow: hidden;
     z-index: 0;
-    /* object-fit: cover; */
   }
 }
 @media screen and (min-width: 1024px) {
@@ -113,9 +112,7 @@
   .headerBlock__pageSubHeading, .headerBlock__adjList, .headerBlock__therapyText {
     font-size: 1.5rem;
   }
-  .headerBlock__adjList {
 
-  }
   .headerBlock__image {
     top: 75px;
     width: 30vw;
