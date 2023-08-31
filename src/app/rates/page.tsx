@@ -15,6 +15,7 @@ type priceType = {
   price: string;
   afterPriceText: string;
   description: string;
+  asteriskText?: string;
 };
 export default async function Rates() {
   const data = await getPageData('6PUSpM2Ef5CcyzrOmhUvMt');
@@ -45,6 +46,7 @@ export default async function Rates() {
       afterPriceText: paragraphs.pricePerWeek.content,
       price: headers.messageBasedCounseling.subHeading || '',
       description: paragraphs.messageBasedCounselingPara.content,
+      asteriskText: paragraphs.asteriskText.content,
     },
     {
       serviceName: headers.groupTherapy.mainHeading,
@@ -81,7 +83,12 @@ export default async function Rates() {
         <div className={styles.pricesSection__contentWrapper}>
           {ratesArr.map((service) => {
             return (
-              <div className={styles.pricesSection__contentItem} key={crypto.randomUUID()}>
+              <div
+                className={`${styles.pricesSection__contentItem} ${
+                  service.asteriskText ? styles.asteriskMargin : ''
+                }`}
+                key={crypto.randomUUID()}
+              >
                 <header
                   className={`${service.beforePriceText.length > 0 ? styles.beforeTextMargin : ''}`}
                 >
@@ -101,7 +108,10 @@ export default async function Rates() {
                   </div>
                   <h3 className={`${CormorantMedium.className}`}>{service.serviceName}</h3>
                 </header>
-                <p>{service.description}</p>
+                <p className={`${service.asteriskText && styles.asteriskMargin}`}>
+                  {service.description}
+                </p>
+                <span>{service.asteriskText && service.asteriskText}</span>
               </div>
             );
           })}
