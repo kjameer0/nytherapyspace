@@ -1,14 +1,18 @@
+
 //styles
 import styles from './page.module.css';
 //fonts
 import { CormorantBold, CormorantMedium, semplicitaLight } from '../fonts/fonts';
 //components
 import LandingView from '@/components/LandingView/LandingView';
+import FaqList from '@/components/FaqList/FaqList';
 //data
 import { getPageData, getDescriptionText } from '@/lib/utils/contentful-functions';
 import { destructurePageData } from '@/lib/utils/page-type-generator';
 //types
 import { sectionObjType } from '@/lib/utils/page-type-generator';
+//react
+import React from 'react';
 type priceType = {
   serviceName: string;
   beforePriceText: string;
@@ -70,6 +74,16 @@ export default async function Rates() {
       description: paragraphs.individualClinicalSupervision.content,
     },
   ];
+  const faqArray: { mainHeading: string; subHeading?: string }[] = [
+    headers.doYouTakeInsurance,
+    headers.oonProvider,
+    headers.intakeProcess,
+    headers.frequencyOfSessions,
+    headers.separateSessions,
+    headers.cancellationPolicy,
+  ];
+  console.log(faqArray);
+
   return (
     <main className={`${semplicitaLight.className} ${styles.main}`}>
       <LandingView
@@ -116,6 +130,10 @@ export default async function Rates() {
             );
           })}
         </div>
+      </section>
+      <section className={styles.faqSection}>
+        <h3 className={`${CormorantBold.className}`}>{headers.faqHeading.mainHeading}</h3>
+       <FaqList questionArr={faqArray}/>
       </section>
     </main>
   );

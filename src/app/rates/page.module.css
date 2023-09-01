@@ -3,7 +3,7 @@
   background-color: white;
   width: 100%;
 }
-.pricesSection h2 {
+.pricesSection h2, .faqSection h3 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@
 }
 /* item in mapped array of prices and descriptions */
 .pricesSection__contentItem p {
-  border: 1px solid black;
+  border: 1px solid rgb(124, 117, 117);
   border-top: 0px;
   padding: 15px 20px;
   text-align: justify;
@@ -40,7 +40,7 @@
   position: relative;
   flex-basis: 100%;
   display: flex;
-  border: 1px solid black;
+  border: 1px solid rgb(124, 117, 117);
   justify-content: space-evenly;
   align-items: center;
   padding-top: auto;
@@ -57,7 +57,7 @@
 /* contains all price text  */
 .pricesSection__contentItem__priceBlock {
   /* controls vertical rule */
-  border-right: 1px solid black;
+  border-right: 1px solid rgb(124, 117, 117);
   padding: 25px 15px 25px 10px;
   flex-basis: 45%;
   margin: 10px auto;
@@ -73,6 +73,9 @@
   font-size: 2rem;
   width: 100%;
 }
+.visibilityOff {
+display: none;
+}
 
 @media (min-width: 640px) {
   .pricesSection__contentItem {
@@ -82,7 +85,7 @@
     position: relative;
     flex-basis: 25%;
     flex-wrap: wrap;
-    border: 1px solid black;
+    border: 1px solid rgb(124, 117, 117);
     justify-content: center;
     align-items: center;
     padding: 40px 10px;
@@ -90,7 +93,7 @@
     text-align: right;
   }
   .pricesSection__contentItem__priceBlock {
-    border-right: 0px solid black;
+    border-right: 0px solid rgb(124, 117, 117);
     flex-basis: 100%;
     text-align: right;
     margin-right: 0px;
@@ -101,7 +104,7 @@
     font-size: 1.5rem;
   }
   .pricesSection__contentItem p {
-    border: 1px solid black;
+    border: 1px solid rgb(124, 117, 117);
     border-left: 0;
     padding: 15px 20px;
     text-align: left;
@@ -144,6 +147,7 @@
     font-size: 1.25rem;
     flex-basis: 70%;
   }
+
 
   .pricesSection__contentItem header {
     position: relative;

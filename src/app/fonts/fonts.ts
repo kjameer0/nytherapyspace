@@ -21,5 +21,16 @@ export const semplicitaMedium = localFont({
 export const semplicitaLight = localFont({
   src: './font-files/semplicitapro/SemplicitaPro-Light.otf',
 });
+export const semplicitaLightItalic = localFont({
+  src: [
+    { path: './font-files/semplicitapro/SemplicitaPro-LtIt.otf', weight: '400', style: 'normal' },
+    {
+      path: './font-files/semplicitapro/SemplicitaPro-BoldItalic.otf',
+      weight: '800',
+      style: 'bold',
+    },
+  ],
+});
+
 //Poppins
-export const poppinsSemiBold = localFont({src: './font-files/Poppins/Poppins-SemiBold.ttf'})
+export const poppinsSemiBold = localFont({ src: './font-files/Poppins/Poppins-SemiBold.ttf' });
