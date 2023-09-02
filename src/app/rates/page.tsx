@@ -4,6 +4,7 @@ import styles from './page.module.css';
 //fonts
 import { CormorantBold, CormorantMedium, semplicitaLight } from '../fonts/fonts';
 //components
+import Image from 'next/image';
 import LandingView from '@/components/LandingView/LandingView';
 import FaqList from '@/components/FaqList/FaqList';
 //data
@@ -131,6 +132,9 @@ export default async function Rates() {
           })}
         </div>
       </section>
+      <div className={styles.heroWrapper}>
+          <Image src={imgObj.faqhero} width={375} height={45} alt="Person typing"></Image>
+        </div>
       <section className={styles.faqSection}>
         <h3 className={`${CormorantBold.className}`}>{headers.faqHeading.mainHeading}</h3>
        <FaqList questionArr={faqArray}/>
