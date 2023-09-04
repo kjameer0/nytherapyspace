@@ -1,7 +1,7 @@
 //styles
 import styles from './services.module.css';
 //fonts
-import { CormorantBold, CormorantMedium, semplicitaLight, semplicitaRegular } from '../fonts/fonts';
+import { CormorantBold, CormorantMedium, poppinsSemiBold, semplicitaLight, semplicitaRegular } from '../fonts/fonts';
 //components
 import Image from 'next/image';
 import LandingView from '@/components/LandingView/LandingView';
@@ -54,6 +54,43 @@ export default async function Services() {
           <BookButton text="book"></BookButton>
         </div>
       </section>
+      <section className={styles.IndTherapySection}>
+        <div className={styles.heroWrapper}>
+          <Image
+            src={imgObj.individualtherapyhero}
+            width={375}
+            height={45}
+            alt="A chair with wooden arm rests"
+          ></Image>
+          <header className={styles.IndTherapySection__header}>
+            <h2
+              className={`${styles.IndTherapySection__heroWrapper__mainHeading} ${CormorantBold.className}`}
+            >
+              {headers.individualAdultTherapyHeading.mainHeading}
+            </h2>
+            <p
+              className={`${styles['IndTherapySection__header__subHeading']} ${CormorantBold.className}`}
+            >
+              {headers.individualAdultTherapyHeading.subHeading}
+            </p>
+          </header>
+        </div>
+        <header className={styles.IndTherapyContent__header}>
+          <p className={`${poppinsSemiBold.className}`}>{headers.benefitsIndividualTherapy.subHeading}</p>
+          <h2 className={`${CormorantBold.className}`}>{headers.benefitsIndividualTherapy.mainHeading}</h2>
+        </header>
+        <p className={`${styles['IndTherapyContent__para']} ${semplicitaLight.className}`}>{paragraphs.benefitsIndividualTherapyPara.content}</p>
+        <ul className={styles['IndTherapyContent__list']}>
+            {lists.benefitsIndividualTherapyList.listContent.map((item, index) => {
+              return (
+                <li className={semplicitaLight.className} key={crypto.randomUUID()}>
+                  {item}
+                </li>
+              );
+            })}
+          </ul>
+      </section>
+
     </main>
   );
 }

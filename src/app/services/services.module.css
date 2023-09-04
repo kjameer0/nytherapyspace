@@ -55,6 +55,75 @@
 .helpSection__buttonBlock__para {
   font-size: clamp(1.5rem, 4vw, 2rem);
 }
+.IndTherapySection {
+  margin-top: 10px;
+  width: 100%;
+}
+.heroWrapper {
+  width: 100%;
+  height: clamp(240px, 30vw, 450px);
+  margin-bottom: 40px;
+  position: relative;
+}
+.heroWrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: inherit;
+}
+.IndTherapySection__header {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 25%;
+  width: 100%;
+  height: 50%;
+  color: white;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.IndTherapySection__heroWrapper__mainHeading {
+  flex-basis: 20%;
+  width: clamp(100px, 40%, 200px);
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  line-height: 1;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgb(90, 90, 90);
+}
+.IndTherapySection__header__subHeading {
+  flex-basis: 100%;
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-shadow: 2px 2px 4px rgb(90, 90, 90);
+}
+.IndTherapyContent__header {
+  line-height: 1.2;
+}
+.IndTherapyContent__header p {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+.IndTherapyContent__header h2 {
+  font-size: clamp(1.25rem, 8vw, 2.5rem);
+}
+.IndTherapyContent__para {
+  padding: 12px;
+}
+.IndTherapyContent__list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  list-style: none;
+  margin-top: 10px;
+}
+.IndTherapyContent__list li {
+  position: relative;
+}
+.IndTherapyContent__list li::before {
+  position: absolute;
+  top: -4px;
+  left: -15px;
+  content: '•';
+  font-size: 20px;
+}
 /* mobile */
 @media screen and (min-width: 320px) and (max-width: 639px) {
   .helpSection {
@@ -83,6 +152,14 @@
     width: 100px;
     align-self: center;
   }
+  .IndTherapyContent__list {
+    width: 80%;
+    left: 10%;
+    justify-content: center;
+  }
+  .IndTherapyContent__list li {
+    width: 90%;
+  }
 }
 /* tablet */
 @media screen and (min-width: 640px) and (max-width: 1023px) {
@@ -107,6 +184,16 @@
   .helpSection__buttonBlock button {
     font-size: 1.25rem;
     align-self: center;
+  }
+  .IndTherapyContent__list {
+    width: 80%;
+    left: 10%;
+    justify-content: center;
+  }
+  .IndTherapyContent__list li {
+    flex-basis: 100%;
+    width: 100%;
+    left: calc(35% - 100px);
   }
 }
 /* desktop */
@@ -142,5 +229,15 @@
     width: 60%;
     line-height: 1;
     padding-bottom: 20px;
+  }
+  .IndTherapyContent__list {
+    width: 80%;
+    left: 10%;
+    justify-content: center;
+  }
+  .IndTherapyContent__list li {
+    flex-basis: 100%;
+    width: 100%;
+    left: calc(35% - 40px);
   }
 }
