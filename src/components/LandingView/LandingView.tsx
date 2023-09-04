@@ -48,7 +48,7 @@ export default async function LandingView({
             {heading}
           </h1>
           <p className={`${styles.headerBlock__pageSubHeading} ${CormorantBoldItalic.className}`}>
-            {`${name}, `}
+            {`${name}${certification ? ',' : ''} `}
             <span className={CormorantItalic.className}>{certification}</span>
           </p>
           <BookButton text="consultation" />

@@ -83,7 +83,6 @@ export default async function Rates() {
     headers.separateSessions,
     headers.cancellationPolicy,
   ];
-  console.log(faqArray);
 
   return (
     <main className={`${semplicitaLight.className} ${styles.main}`}>

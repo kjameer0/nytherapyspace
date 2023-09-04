@@ -19,15 +19,11 @@ export type sectionParagraphType = {
 export type sectionListType = {
   listContent: string[];
 };
-
 export type sectionObjType = {
   lists: Record<string, sectionListType>;
   headers: Record<string, sectionHeaderType>;
   paragraphs: Record<string, sectionParagraphType>;
 };
-export type descriptionTextType = {
-
-}
 
 export function generateImageObject(data: DataType) {
   try {
@@ -83,10 +79,7 @@ export function generateSectionsObject(data: DataType) {
           throw new ReferenceError('no content');
         }
         const content: sectionHeaderType = { mainHeading, subHeading };
-        sectionObj.headers[title] = {
-          mainHeading,
-          subHeading,
-        };
+        sectionObj.headers[title] = content;
       } else if (isTypeParagraph(section)) {
         //paragraphs only have one field: content
         const text = section.fields.content;
