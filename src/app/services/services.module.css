@@ -1,3 +1,14 @@
+.listFont {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+.paraFont {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin: 0;
+}
+.h3Font {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-top: 0;
+}
 .journeyParaWrapper {
   background-color: white;
   display: flex;
@@ -33,7 +44,8 @@
 .helpSection__textWrapper ul {
   list-style: none;
 }
-.helpSection__textWrapper li {
+.helpSection__textWrapper li,
+.contentList li {
   font-size: clamp(1rem, 3vw, 1.25rem);
 }
 .helpSection__textWrapper ul li::before {
@@ -70,7 +82,7 @@
   width: 100%;
   height: inherit;
 }
-.IndTherapySection__header {
+.heroHeader {
   display: flex;
   position: absolute;
   justify-content: center;
@@ -82,26 +94,26 @@
   flex-wrap: wrap;
   text-align: center;
 }
-.IndTherapySection__heroWrapper__mainHeading {
+.heroHeader__mainHeading {
   flex-basis: 20%;
   width: clamp(100px, 40%, 200px);
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
   line-height: 1;
   margin: 0;
   text-shadow: 2px 2px 4px rgb(90, 90, 90);
 }
-.IndTherapySection__header__subHeading {
+.heroHeader__subHeading {
   flex-basis: 100%;
   font-size: clamp(1rem, 2vw, 2rem);
   text-shadow: 2px 2px 4px rgb(90, 90, 90);
 }
-.IndTherapyContent__header {
+.heroHeader {
   line-height: 1.2;
 }
-.IndTherapyContent__header p {
+.heroHeader p {
   font-size: clamp(1rem, 4vw, 1.5rem);
 }
-.IndTherapyContent__header h2 {
+.heroHeader h2 {
   font-size: clamp(1.25rem, 8vw, 2.5rem);
 }
 .IndTherapyContent__para {
@@ -113,6 +125,7 @@
   position: relative;
   list-style: none;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 .IndTherapyContent__list li {
   position: relative;
@@ -124,6 +137,127 @@
   content: '•';
   font-size: 20px;
 }
+.IndTherapyContent__para {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.IndTherapyContent__header {
+  padding-left: 40px;
+}
+.IndTherapyContent__header h3,
+.familySection h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+.IndTherapyContent__header p,
+.IndTherapyContent__para,
+.IndTherapyContent__list {
+  font-size: clamp(1rem, 4vw, 1.25rem);
+}
+.teenContent {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.teenContent h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+.teenContent p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: 20px;
+}
+.contentList {
+  list-style: none;
+}
+.contentList li {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+.contentList li::before {
+  content: '•';
+  position: absolute;
+  top: -2px;
+  left: -15px;
+  font-size: 20px;
+}
+.familySection .heroWrapper {
+  margin-top: 30px;
+}
+.familySection p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+.familySection__content__list {
+  list-style: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.familySection__content__list li {
+  position: relative;
+  width: 70%;
+}
+.familySection__content__list li::before {
+  position: absolute;
+  top: -3px;
+  left: -15px;
+  content: '•';
+  font-size: 20px;
+}
+.familyContent__flexWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.familyContent__flex2 {
+  background-color: #c3c9c0;
+  color: white;
+  text-shadow: 2px 2px 4px rgb(139, 137, 137);
+  flex-basis: 100%;
+}
+.familyContent__flex2 button {
+  border: none;
+  border: 1px solid white;
+  color: white;
+}
+.familyContent__flex1 h3,
+.familyContent__flex1 p {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.couplesSection .heroWrapper {
+  margin-top: 10px;
+}
+.couplesSection__content__flexWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+.couplesSection__content__flex1 h3,
+.couplesSection__content__flex1 p,
+.groupSection h3,
+.groupSection p, .supervisionSection h3 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.couplesSection__content__flex2 {
+  background-color: #676a60;
+}
+
+.couplesSection__content__flex2 li {
+  color: white;
+  position: relative;
+}
+.couplesSection__content__flex1 {
+  margin-bottom: 20px;
+}
+.supervisionSection h3 {
+  margin-bottom: 20px;
+}
+.supervisionSection ul {
+  margin: 0;
+}
+
 /* mobile */
 @media screen and (min-width: 320px) and (max-width: 639px) {
   .helpSection {
@@ -160,6 +294,44 @@
   .IndTherapyContent__list li {
     width: 90%;
   }
+  .teenSection__mainHeading {
+    flex-basis: 67%;
+  }
+  .teenContent__list {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .teenContent__list li {
+    position: relative;
+    justify-self: center;
+  }
+  .familyContent__flex2 {
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .familyContent__flex2 p {
+    line-height: 1.2;
+    font-size: 1.5rem;
+    flex-basis: 30%;
+  }
+  .familyContent__flex2 button {
+    height: 30px;
+    width: 100px;
+  }
+  .couplesSection__content__flexWrapper {
+    justify-content: center;
+  }
+  .couplesSection__content__flex2 {
+    flex-basis: 100%;
+  }
 }
 /* tablet */
 @media screen and (min-width: 640px) and (max-width: 1023px) {
@@ -171,6 +343,9 @@
     border-bottom: 1px solid rgb(116, 113, 113);
     flex-basis: 80%;
     padding-bottom: 20px;
+  }
+  .helpSection__textWrapper ul {
+    text-align: left;
   }
   .helpSection__buttonBlock {
     justify-content: space-between;
@@ -186,7 +361,7 @@
     align-self: center;
   }
   .IndTherapyContent__list {
-    width: 80%;
+    width: 70%;
     left: 10%;
     justify-content: center;
   }
@@ -194,6 +369,47 @@
     flex-basis: 100%;
     width: 100%;
     left: calc(35% - 100px);
+  }
+  .teenSection__mainHeading {
+    letter-spacing: 0.05rem;
+    flex-basis: calc(43% + 30px);
+    max-width: 428px;
+  }
+  .teenContent__list {
+    position: relative;
+    left: 25%;
+    width: 60%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .teenContent__list li {
+    position: relative;
+    justify-self: center;
+  }
+  .familyContent__flex2 {
+    height: clamp(200px, 30vw, 280px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .familyContent__flex2 p {
+    line-height: 1.2;
+    font-size: 2rem;
+    flex-basis: 30%;
+  }
+  .familyContent__flex2 button {
+    font-size: 1.25rem;
+    height: 50px;
+    width: 180px;
+  }
+  .couplesSection__content__flexWrapper {
+    justify-content: center;
+  }
+  .couplesSection__content__flex2 {
+    flex-basis: 100%;
   }
 }
 /* desktop */
@@ -231,7 +447,7 @@
     padding-bottom: 20px;
   }
   .IndTherapyContent__list {
-    width: 80%;
+    width: 70%;
     left: 10%;
     justify-content: center;
   }
@@ -239,5 +455,85 @@
     flex-basis: 100%;
     width: 100%;
     left: calc(35% - 40px);
+  }
+  .IndTherapyContent__para {
+    padding: 0 40px;
+  }
+  .teenSection__mainHeading {
+    letter-spacing: 0.05rem;
+    flex-basis: calc(43% + 30px);
+    max-width: 428px;
+    margin-bottom: -50px;
+  }
+  .teenContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .teenContent h3 {
+    flex-basis: 100%;
+    justify-self: flex-start;
+  }
+  .teenContent__list {
+    flex-basis: 40%;
+    justify-self: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .teenContent__list li {
+    position: relative;
+    justify-self: center;
+  }
+  .familySection .heroWrapper {
+    margin-bottom: 10px;
+  }
+  .familyContent__flexWrapper {
+    flex-wrap: nowrap;
+  }
+  .familyContent__flex2 {
+    order: 1;
+    flex-basis: 30%;
+  }
+  .familyContent__flex1 {
+    order: 2;
+    flex-basis: 70%;
+  }
+  .familyContent__flex2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .familyContent__flex2 p {
+    line-height: 1.2;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 45%;
+    flex-basis: 12%;
+  }
+  .familyContent__flex2 button {
+    height: 50px;
+    width: 180px;
+  }
+  .couplesSection .heroWrapper {
+    margin-bottom: 5px;
+  }
+  .couplesSection__content__flexWrapper {
+    flex-wrap: nowrap;
+  }
+  .couplesSection__content__flex1 {
+    padding-top: 30px;
+    padding-left: 30px;
+    order: 2;
+    flex-basis: 50%;
+  }
+  .couplesSection__content__flex2 {
+    order: 1;
+    flex-basis: 50%;
+  }
+  .couplesSection__content__flex2 li {
+    width: 80%;
   }
 }

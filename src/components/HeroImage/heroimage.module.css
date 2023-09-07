@@ -1,0 +1,45 @@
+.heroWrapper {
+  width: 100%;
+  height: clamp(240px, 30vw, 450px);
+  margin-bottom: 40px;
+  position: relative;
+}
+.heroWrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: inherit;
+}
+.heroHeader {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 25%;
+  width: 100%;
+  height: 50%;
+  color: white;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.heroHeader__mainHeading {
+  flex-basis: 20%;
+  width: clamp(100px, 40%, 200px);
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  line-height: 1;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgb(90, 90, 90);
+}
+.heroHeader__subHeading {
+  flex-basis: 100%;
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-shadow: 2px 2px 4px rgb(90, 90, 90);
+}
+.heroHeader {
+  line-height: 1.2;
+}
+.heroHeader p {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+.heroHeader h2 {
+  font-size: clamp(1.25rem, 8vw, 2.5rem);
+}
